@@ -1,5 +1,7 @@
 # BlackEndpoints
 
+This project is freely available to use as-is, but the source code is not licensed for reuse, modification, or distribution.
+
 ## Supporting Black-Owned Businesses in Times of Change
 
 BlackEndpoints is a web application designed to help users discover and support local Black-owned businesses in their area. In response to recent rollbacks of Diversity, Equity, and Inclusion (DEI) initiatives across various sectors, this platform serves as a crucial tool for economic empowerment and community solidarity.
@@ -38,16 +40,11 @@ If you're a Black business owner and would like to add your business to our plat
 ## Privacy and Data
 
 - We prioritize user privacy and only request location data to provide relevant local results
-- Business information is verified before being added to our database
 - No personal user data is stored or tracked beyond anonymous analytics
 
 ## Support
 
 If you encounter any issues or have suggestions for improvement, please email blackendpoints@gmail.com
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
