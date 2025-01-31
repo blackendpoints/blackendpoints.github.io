@@ -1,5 +1,6 @@
+/* Base styles */
 :root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+  font-family: 'Inter', 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -7,11 +8,105 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Google Material Design 3 colors */
+  --primary-color: #1a73e8; /* Google Blue */
+  --primary-dark: #1557b0;
+  --on-primary: #ffffff;
+  --secondary-color: #188038; /* Google Green */
+  --secondary-dark: #0d652d;
+  --surface-color: #ffffff;
+  --surface-variant: #f8f9fa;
+  --background: #ffffff;
+  --error-color: #d93025; /* Google Red */
+  --error-dark: #b31412;
+  --text-primary: #202124; /* Google's primary text */
+  --text-secondary: #5f6368; /* Google's secondary text */
+  --border-color: #dadce0;
+  --shadow-color: rgba(60, 64, 67, 0.3);
+  --shadow-color-light: rgba(60, 64, 67, 0.15);
+  
+  /* Elevation */
+  --elevation-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  --elevation-2: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  --elevation-3: 0 2px 6px 2px rgba(60, 64, 67, 0.15), 0 1px 2px 0 rgba(60, 64, 67, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #E5E5E5;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-family: 'Google Sans', 'Inter', sans-serif;
+}
+
+/* Form elements */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Error messages */
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Loading states */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
 }

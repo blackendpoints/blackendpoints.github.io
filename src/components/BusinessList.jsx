@@ -1,5 +1,5 @@
 function BusinessList({ businesses, onBusinessClick }) {
-  if (businesses.length === 0) return null;
+  if (!businesses || businesses.length === 0) return null;
 
   return (
     <div className="business-grid">
@@ -10,7 +10,7 @@ function BusinessList({ businesses, onBusinessClick }) {
           onClick={() => onBusinessClick(business)}
         >
           <img 
-            src={business.imageUrl} 
+            src={business.image_url || 'https://via.placeholder.com/400x200?text=No+Image'} 
             alt={business.name}
             className="business-image"
           />

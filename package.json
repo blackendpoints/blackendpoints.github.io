@@ -3,21 +3,21 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://yourusername.github.io/blackendpoints",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.3",
+    "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "leaflet": "^1.9.4",
+    "react-ga4": "^2.1.0",
     "react-leaflet": "^4.2.1",
-    "react-ga4": "^2.1.0"
+    "react-router-dom": "^6.22.0",
+    "workbox-window": "^7.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -28,9 +28,13 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
-    "gh-pages": "^6.1.1",
     "globals": "^15.9.0",
     "terser": "^5.29.1",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "vite-plugin-pwa": "^0.17.5",
+    "workbox-core": "^7.0.0",
+    "workbox-precaching": "^7.0.0",
+    "workbox-routing": "^7.0.0",
+    "workbox-strategies": "^7.0.0"
   }
 }

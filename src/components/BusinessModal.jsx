@@ -1,41 +1,81 @@
 function BusinessModal({ business, onClose }) {
+  if (!business) return null;
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>×</button>
         
-        <img 
-          src={business.imageUrl} 
-          alt={business.name}
-          className="modal-image"
-        />
+        {business.image_url && (
+          <img 
+            src={business.image_url} 
+            alt={business.name}
+            className="modal-image"
+          />
+        )}
         
         <div className="modal-details">
           <h2>{business.name}</h2>
-          <p className="category">{business.category}</p>
-          <p className="description">{business.description}</p>
+          <div className="category-badge">{business.category}</div>
           
-          <div className="contact-info">
-            <p><strong>Address:</strong> {business.location}</p>
-            <p><strong>Phone:</strong> {business.phone}</p>
-            <p><strong>Email:</strong> {business.email}</p>
-            {business.website && (
-              <p>
-                <strong>Website:</strong>{' '}
-                <a 
-                  href={business.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="website-link"
-                >{business.website}</a>
-              </p>
-            )}
+          {business.description && (
+            <p className="description">{business.description}</p>
+          )}
+          
+          <div className="info-section">
+            <h3>Location & Contact</h3>
+            <div className="info-grid">
+              <div className="info-item">
+                <strong>Address</strong>
+                <p>{business.location}</p>
+              </div>
+              
+              {business.phone && (
+                <div className="info-item">
+                  <strong>Phone</strong>
+                  <p>
+                    <a href={`tel:${business.phone}`} className="contact-link">
+                      {business.phone}
+                    </a>
+                  </p>
+                </div>
+              )}
+              
+              {business.email && (
+                <div className="info-item">
+                  <strong>Email</strong>
+                  <p>
+                    <a href={`mailto:${business.email}`} className="contact-link">
+                      {business.email}
+                    </a>
+                  </p>
+                </div>
+              )}
+              
+              {business.website && (
+                <div className="info-item">
+                  <strong>Website</strong>
+                  <p>
+                    <a 
+                      href={business.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-link"
+                    >
+                      Visit Website
+                    </a>
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
 
-          <div className="business-hours">
-            <h3>Business Hours</h3>
-            <p>{business.hours}</p>
-          </div>
+          {business.hours && (
+            <div className="info-section">
+              <h3>Business Hours</h3>
+              <p className="hours">{business.hours}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
