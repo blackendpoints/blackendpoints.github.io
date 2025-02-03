@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,6 +8,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="BlackEndpoints" />
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -24,14 +29,24 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>BlackEndpoints - Find Black-Owned Businesses Near You</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Google+Sans:wght@400;500;700&display=swap" as="style" crossorigin />
+    
+    <!-- Load styles -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+     crossorigin="" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-Ckejxao1.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Coc8rZQH.css">
+    <script type="module" crossorigin src="/assets/index-CY3HienR.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-5RJnHb7j.js">
+    <link rel="modulepreload" crossorigin href="/assets/analytics-C9xzTCW2.js">
+    <link rel="modulepreload" crossorigin href="/assets/map-vendor-8l1D1hfU.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-vendor-JXCJhRh-.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DZ6icxeQ.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
