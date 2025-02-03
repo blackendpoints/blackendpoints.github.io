@@ -3,23 +3,14 @@ import { useState } from 'react';
 function BusinessFilters({ onFilterChange }) {
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  // Updated categories list
+  // Revised categories list
   const staticCategories = [
-    'Food & Beverage',
-    'Health & Wellness',
-    'Retail & Fashion',
-    'Automotive',
-    'Home Services',
+    'Food',
+    'Hair Care',
+    'Retail',
     'Professional Services',
-    'Technology',
-    'Education & Training',
-    'Arts & Entertainment',
-    'Beauty & Personal Care',
-    'Financial Services',
-    'Real Estate',
-    'Sports & Recreation',
-    'Media & Communications',
-    'Event Services'
+    'Home Services',
+    'Technology'
   ];
 
   const handleCategoryChange = (e) => {

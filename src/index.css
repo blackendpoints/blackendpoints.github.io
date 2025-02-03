@@ -1,30 +1,16 @@
 /* Base styles */
 :root {
-  font-family: 'Inter', 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   /* Google Material Design 3 colors */
-  --primary-color: #1a73e8; /* Google Blue */
+  --primary-color: #1a73e8;
   --primary-dark: #1557b0;
   --on-primary: #ffffff;
-  --secondary-color: #188038; /* Google Green */
-  --secondary-dark: #0d652d;
   --surface-color: #ffffff;
   --surface-variant: #f8f9fa;
   --background: #ffffff;
-  --error-color: #d93025; /* Google Red */
-  --error-dark: #b31412;
-  --text-primary: #202124; /* Google's primary text */
-  --text-secondary: #5f6368; /* Google's secondary text */
+  --text-primary: #202124;
+  --text-secondary: #5f6368;
   --border-color: #dadce0;
-  --shadow-color: rgba(60, 64, 67, 0.3);
-  --shadow-color-light: rgba(60, 64, 67, 0.15);
+  --error-color: #d93025;
   
   /* Elevation */
   --elevation-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
@@ -32,50 +18,50 @@
   --elevation-3: 0 2px 6px 2px rgba(60, 64, 67, 0.15), 0 1px 2px 0 rgba(60, 64, 67, 0.3);
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: var(--background);
-  color: var(--text-primary);
+/* Base HTML elements */
+html {
+  font-size: 16px;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  line-height: 1.2;
-  font-family: 'Google Sans', 'Inter', sans-serif;
+body {
+  font-family: 'Inter', 'Google Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  background-color: var(--background);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 /* Form elements */
-input, select, textarea, button {
+input, 
+select, 
+textarea, 
+button {
   font-family: inherit;
   font-size: inherit;
+  line-height: inherit;
 }
 
-/* Links */
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Buttons */
+/* Remove button styles */
 button {
-  cursor: pointer;
-  border: none;
   background: none;
-  font: inherit;
-  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 button:disabled {
@@ -83,30 +69,48 @@ button:disabled {
   opacity: 0.7;
 }
 
-/* Error messages */
-.error-message {
-  color: var(--error-color);
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+/* Basic link styles */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* Loading states */
-.loading {
-  text-align: center;
-  padding: 2rem;
-  color: var(--text-secondary);
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-dark);
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* Focus styles */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: #fff;
+  }
+  
+  .no-print {
+    display: none;
   }
 }

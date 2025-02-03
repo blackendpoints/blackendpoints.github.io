@@ -80,6 +80,27 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true
       }
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'map-vendor': ['leaflet', 'react-leaflet'],
+          'supabase-vendor': ['@supabase/supabase-js'],
+          'analytics': ['react-ga4']
+        }
+      }
+    }
+  },
+  server: {
+    port: 3000,
+    host: true,
+    strictPort: true,
+    headers: {
+      'X-Frame-Options': 'DENY',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Permissions-Policy': 'geolocation=(self)'
     }
   }
 })

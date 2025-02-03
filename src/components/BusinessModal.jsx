@@ -1,3 +1,5 @@
+import { getMapsUrl } from './Map';
+
 function BusinessModal({ business, onClose }) {
   if (!business) return null;
 
@@ -27,7 +29,16 @@ function BusinessModal({ business, onClose }) {
             <div className="info-grid">
               <div className="info-item">
                 <strong>Address</strong>
-                <p>{business.location}</p>
+                <p>
+                  <a 
+                    href={getMapsUrl(business.location, business.latitude, business.longitude)}
+                    className="contact-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {business.location}
+                  </a>
+                </p>
               </div>
               
               {business.phone && (
