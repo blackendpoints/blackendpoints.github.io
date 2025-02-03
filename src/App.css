@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-top: 72px; /* Add padding to account for fixed header */
 }
 
 .main {
@@ -42,8 +43,9 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 16px;
-  pointer-events: none;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--elevation-1);
 }
 
 .action-buttons-container {
@@ -51,7 +53,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  pointer-events: auto;
+  padding: 16px;
 }
 
 /* Header styles */
