@@ -25,7 +25,7 @@ function App() {
           <Route path="/*" element={<Home />} />
         </Routes>
         <div className="copyright">
-          © {new Date().getFullYear()} <a href="https://www.instagram.com/blackendpoints" target="_blank" rel="noopener noreferrer">BlackEndpoints</a>. Created by <a href="https://github.com/jcode116" target="_blank" rel="noopener noreferrer">@jcode116</a>
+          © {new Date().getFullYear()} <a href="https://www.instagram.com/blackendpoints" target="_blank" rel="noopener noreferrer">BlackEndpoints</a>. Created by <a href="https://github.com/opensourcejay" target="_blank" rel="noopener noreferrer">@opensourcejay</a>
         </div>
       </div>
     </Router>
